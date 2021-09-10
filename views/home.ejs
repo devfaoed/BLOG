@@ -1,0 +1,125 @@
+<%- include("./partials/header.ejs") %>
+    <!-- ======= Blog Single Section ======= -->
+    <section class="blog-wrapper sect-pt4">
+        <div class="container" id="index">
+                <div class="row head">
+                    <div class="col-md-8"> 
+                        <% foundblog.forEach(function(blog) { %>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <blockquote class="blockquote">
+                                        <h5><%= blog.topic %></h5>
+                                </div>
+                                <div class="col-md-4">
+                                        <i id="blend">
+                                            <p><i class="fas fa-clock"></i> <%= blog.date.toDateString() %></p>
+                                            <p>Category: <span><b><%= blog.category %></span></b></p>
+                                        </i>
+                                    </blockquote>
+                                 </div>
+                            </div>
+
+                        <div class="row">
+                            <div class="col-md-5">        
+                                    <img src="<%= blog.image %>" alt="image">                                  
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                     <h6><%= blog.title %></h6>
+                                     <p><%= blog.description.substring(0, 150) %><a href="/blog/<%= blog._id %>/show"> Read More</a></p>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <% }) %>  
+                    </div>
+                       
+                 
+
+                    <div class="col-md-4">
+                        <div>
+                            <h3>Search blog</h3>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </div>
+                        <div class="widget-sidebar">
+                        <h5 class="sidebar-title">Recent Post</h5>
+                        <div class="sidebar-content">
+                            <ul class="list-sidebar">
+                            <li>
+                                <a href="#">Atque placeat maiores.</a>
+                            </li>
+                            <li>
+                                <a href="#">Lorem ipsum dolor sit amet consectetur</a>
+                            </li>
+                            <li>
+                                <a href="#">Nam quo autem exercitationem.</a>
+                            </li>
+                            <li>
+                                <a href="#">Atque placeat maiores nam quo autem</a>
+                            </li>
+                            <li>
+                                <a href="#">Nam quo autem exercitationem.</a>
+                            </li>
+                            </ul>
+                        </div>
+                        </div>
+                        <div class="widget-sidebar">
+                        <h5 class="sidebar-title">Archives</h5>
+                        <div class="sidebar-content">
+                            <ul class="list-sidebar">
+                            <li>
+                                <a href="#">September, 2017.</a>
+                            </li>
+                            <li>
+                                <a href="#">April, 2017.</a>
+                            </li>
+                            <li>
+                                <a href="#">Nam quo autem exercitationem.</a>
+                            </li>
+                            <li>
+                                <a href="#">Atque placeat maiores nam quo autem</a>
+                            </li>
+                            <li>
+                                <a href="#">Nam quo autem exercitationem.</a>
+                            </li>
+                            </ul>
+                        </div>
+                        </div>
+                        <div class="widget-sidebar widget-tags">
+                        <h5 class="sidebar-title">Categories</h5>
+                        <div class="sidebar-content">
+                            <ul>
+                            <li>
+                                <a href="#">Technolgy</a>
+                            </li>
+                            <li>
+                                <a href="#">Science</a>
+                            </li>
+                            <li>
+                                <a href="#">Health</a>
+                            </li>
+                            <li>
+                                <a href="#">Life</a>
+                            </li>
+                            <li>
+                                <a href="#">Marketing</a>
+                            </li>
+                            <li>
+                                <a href="#">Sport</a>
+                            </li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    
+ 
+
+<%- include("./partials/footer.ejs") %>
