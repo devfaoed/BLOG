@@ -1,0 +1,84 @@
+<%- include("./partials/header.ejs") %>
+    <!-- ======= Blog Single Section ======= -->
+    <section class="blog-wrapper sect">
+        <div class="container">
+            <div class="row head">
+                <div class="col-sm-3">
+                    <h4><a href="#"><%= foundUser.name %></a></h4>
+                    <p>Your personal account</p>
+                    <ul class="list-group text-center">
+                        <li class="list-group-item">Account settings</li>
+                        <li class="list-group-item"><a href="/">back</a></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div> 
+                
+                <div class="col-md-7">
+                        <h4> Public profile </h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-9 text-justify">
+                                <form method="POST" action="/settings/<%= foundUser._id %>?_method=PUT">
+                                    <h5>Name</h5>
+                                    <div class="text-justify">
+                                        <input type="text" name="profile[name]" class="form-control" value="<%= foundUser.name %>">
+                                        <p>Your name may appear around G'Writer where you contribute or write an Article. You can remove it at any time.</p>
+                                    </div>
+
+                                    <h5>Public mail</h5>
+                                    <div class="text-justify">
+                                        <input type="text" name="profile[email]" class="form-control" value="<%= foundUser.email %>">
+                                        <p> You have set your email address to receive messages</p>
+                                    </div>
+
+                                    <h5>Bio</h5>
+                                    <div class="text-justify">
+                                    <textarea rows="3" class="form-control" name="profile[bio]"><%= foundUser.bio %></textarea>
+                                        <p>Add something about yourself</p>
+                                    </div>
+
+                                    <h5>URL</h5>
+                                    <div class="text-justify">
+                                        <input type="text" name="profile[url]" class="form-control" value="<%= foundUser.url %> %>">
+                                        <p>Add your url links and other personal links </p>
+                                    </div>
+
+                                    <h5>Twitter username</h5>
+                                    <div class="text-justify">
+                                        <input type="text" name="profile[twitter]" class="form-control" value="<%= foundUser.twitter %>">
+                                        <p>Add your Twitter username example @g'writter </p>
+                                    </div>
+
+                                    <h5>Facebook username</h5>
+                                    <div class="text-justify">
+                                        <input type="text" name="profile[facebook]" class="form-control" value="<%= foundUser.facebook %>">
+                                        <p>Add your Facebook username </p>
+                                    </div>
+                                    <p>All of the fields on this page are optional and can be deleted at any time, and by filling them out,
+                                        you're giving us consent to share this data wherever your user profile appears. 
+                                        Please see our <a href="#">privacy statement</a> to learn more about how we use this information.
+                                    </p>
+
+                                    <div class="form-group">
+                                        <input type="submit" name="submit" value="Update Profile" class="btn btn-primary btn-block">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+ 
+
+<%- include("./partials/footer.ejs") %>
